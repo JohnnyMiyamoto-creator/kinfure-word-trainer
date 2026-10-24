@@ -84,8 +84,8 @@ function makeQueue(forceWeak=false, shuffle=false){
 function render(){
  if(!queue.length){$("word").textContent="対象の単語はありません";$("meaning").textContent="範囲・出題条件を変更してください。";$("counter").textContent="0 / 0";$("show").disabled=true;$("yes").disabled=true;$("no").disabled=true;$("later").disabled=true;$("next").disabled=true;return;}
  $("show").disabled=$("yes").disabled=$("no").disabled=$("later").disabled=$("next").disabled=false;
- const w=current(); $("word").textContent=w.word;$("counter").textContent=`${pos+1} / ${queue.length}　｜　${w.range}番`;
- $("meaning").textContent=revealed?w.meaning:"意味を思い出してから「意味を表示」";revealed=false;
+ const w=current(); revealed=false; $("word").textContent=w.word;$("counter").textContent=`${pos+1} / ${queue.length}　｜　${w.range}番`;
+ $("meaning").textContent="意味を思い出してから「意味を表示」";
  $("show").textContent="意味を表示";
 }
 function advance(status){
